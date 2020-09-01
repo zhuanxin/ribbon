@@ -1,13 +1,13 @@
-apply plugin: 'nebula-test-jar'
-apply plugin: 'nebula-facet'
+//apply plugin: 'nebula-test-jar'
+//apply plugin: 'nebula-facet'
 
-facets {
-    examples {
-        parentSourceSet = 'main'
-    }
-}
+//facets {
+//    examples {
+//        parentSourceSet = 'main'
+//    }
+//}
 
-build.dependsOn(examplesClasses)
+//build.dependsOn(examplesClasses)
 
 dependencies {
     compile project(':ribbon-core')
