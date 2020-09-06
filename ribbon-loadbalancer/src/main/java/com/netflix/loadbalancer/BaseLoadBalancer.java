@@ -272,6 +272,10 @@ public class BaseLoadBalancer extends AbstractLoadBalancer implements
         }
     }
 
+    /**
+     * 启动Ping任务
+     * 默认每隔30s
+     */
     void setupPingTask() {
         if (canSkipPing()) {
             return;
@@ -688,6 +692,7 @@ public class BaseLoadBalancer extends AbstractLoadBalancer implements
                 allLock.unlock();
 
                 int numCandidates = allServers.length;
+                //通过判断服务实例状态获取存活服务
                 results = pingerStrategy.pingServers(ping, allServers);
 
                 final List<Server> newUpList = new ArrayList<Server>();

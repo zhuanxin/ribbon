@@ -160,6 +160,7 @@ public class DiscoveryEnabledNIWSServerList extends AbstractServerList<Discovery
             return new ArrayList<DiscoveryEnabledServer>();
         }
 
+        //从eureka-client获取服务实例并筛选出状态为UP的放入serverList
         EurekaClient eurekaClient = eurekaClientProvider.get();
         if (vipAddresses!=null){
             for (String vipAddress : vipAddresses.split(",")) {

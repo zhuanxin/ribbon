@@ -104,8 +104,13 @@ public class ZoneAwareLoadBalancer<T extends Server> extends DynamicServerListLo
                 existingLBEntry.getValue().setServersList(Collections.emptyList());
             }
         }
-    }    
-        
+    }
+
+    /**
+     * 选取服务
+     * @param key 默认default
+     * @return
+     */
     @Override
     public Server chooseServer(Object key) {
         if (!ENABLED.get() || getLoadBalancerStats().getAvailableZones().size() <= 1) {
